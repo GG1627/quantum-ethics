@@ -1,0 +1,84 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --background: #0A0F1F;
+  --foreground: #F8FAFC;
+  --quantum-blue: #00D4FF;
+  --quantum-cyan: #06FFA5;
+  --quantum-purple: #8B5CF6;
+  --quantum-bg-secondary: #1A1F35;
+  --quantum-accent: rgba(0, 212, 255, 0.1);
+  --quantum-border: rgba(0, 212, 255, 0.2);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 212, 255, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 212, 255, 0.5);
+}
+
+/* Quantum glow effect */
+.quantum-glow {
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+}
+
+.quantum-glow-strong {
+  box-shadow: 0 0 40px rgba(0, 212, 255, 0.5);
+}
+
+/* Glassmorphism effect */
+.glassmorphism {
+  background: rgba(26, 31, 53, 0.8);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+}
+
+/* Quantum grid background */
+.quantum-grid {
+  background-image:
+    linear-gradient(rgba(0, 212, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 255, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: grid-move 20s linear infinite;
+}
+
+@keyframes grid-move {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(50px, 50px); }
+}
