@@ -8,7 +8,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Quantum Awareness",
+  title: "Quantum Ethics",
   description: "Understanding the ethical risks of advanced quantum computing",
 };
 
