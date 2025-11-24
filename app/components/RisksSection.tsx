@@ -25,12 +25,12 @@ const RisksSection = () => {
             opacity: 1,
             y: 0,
             rotationY: 0,
-            duration: 1,
+            duration: 0.6,
             ease: "power2.out",
             delay: index * 0.15,
             scrollTrigger: {
               trigger: card,
-              start: "top 75%",
+              start: "top 90%",
               end: "bottom 25%",
               toggleActions: "play none none reverse"
             }
@@ -85,17 +85,17 @@ const RisksSection = () => {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true, amount: 0.3 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-quantum-purple via-quantum-cyan to-quantum-blue bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-linear-to-r from-quantum-purple via-quantum-cyan to-quantum-blue bg-clip-text text-black">
             Simple Explanations of Risks
           </h2>
-          <p className="text-xl text-gray-300 font-light max-w-2xl mx-auto">
+          <p className="text-xl text-slate-600 font-light max-w-2xl mx-auto">
             Understanding the key ethical challenges posed by quantum computing
           </p>
-          <div className="w-24 h-px bg-gradient-to-r from-transparent via-quantum-purple to-transparent mx-auto mt-6" />
+          <div className="w-24 h-px bg-linear-to-r from-transparent via-quantum-purple to-transparent mx-auto mt-6" />
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -107,23 +107,23 @@ const RisksSection = () => {
                 scale: 1.02,
                 y: -8
               }}
-              transition={{ duration: 0.3 }}
-              className="group glassmorphism rounded-xl p-8 quantum-glow hover:quantum-glow-strong transition-all duration-300"
+              transition={{ duration: 0.2 }}
+              className="group glassmorphism rounded-xl p-8 quantum-glow hover:quantum-glow-strong transition-all duration-200"
             >
-              <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${risk.gradient} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+              <div className={`w-16 h-16 rounded-xl bg-linear-to-br ${risk.gradient} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-200`}>
                 <span className="text-2xl">{risk.icon}</span>
               </div>
 
-              <h3 className="text-2xl font-semibold text-white mb-4 group-hover:text-quantum-cyan transition-colors duration-300">
+              <h3 className="text-2xl font-semibold text-slate-800 mb-4 group-hover:text-quantum-blue transition-colors duration-200">
                 {risk.title}
               </h3>
 
-              <p className="text-gray-300 leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
+              <p className="text-slate-600 leading-relaxed group-hover:text-slate-700 transition-colors duration-300">
                 {risk.description}
               </p>
 
               {/* Subtle accent line */}
-              <div className={`w-12 h-0.5 bg-gradient-to-r ${risk.gradient} mt-6 opacity-60 group-hover:opacity-100 transition-opacity duration-300`} />
+              <div className={`w-12 h-0.5 bg-linear-to-r ${risk.gradient} mt-6 opacity-60 group-hover:opacity-100 transition-opacity duration-300`} />
             </motion.div>
           ))}
         </div>
