@@ -110,9 +110,6 @@ const FactsSection = () => {
               transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
               className="glassmorphism rounded-xl p-6 quantum-glow hover:quantum-glow-strong transition-all duration-500 bg-gradient-to-br from-quantum-bg-secondary/50 to-quantum-bg-tertiary/30"
             >
-              <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-quantum-maroon via-quantum-dark-red to-quantum-crimson flex items-center justify-center mb-4 shadow-lg shadow-quantum-maroon/20">
-                <div className="w-6 h-6 bg-white/90 rounded-sm" />
-              </div>
 
               <h3 className="text-xl font-semibold text-quantum-text-primary mb-3 group-hover:text-quantum-crimson transition-colors duration-300 font-heading">
                 {fact.title}
