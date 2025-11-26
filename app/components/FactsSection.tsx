@@ -13,24 +13,29 @@ const FactsSection = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+      // Set initial state immediately
+      cardsRef.current.forEach((card) => {
+        gsap.set(card, {
+          opacity: 0,
+          y: 12,
+          scale: 0.98
+        });
+      });
+
       // Animate cards on scroll
       cardsRef.current.forEach((card, index) => {
-        gsap.fromTo(card,
-          {
-            opacity: 0,
-            y: 50,
-            scale: 0.9
-          },
+        gsap.to(card,
           {
             opacity: 1,
             y: 0,
             scale: 1,
-            duration: 0.6,
-            ease: "power2.out",
+            duration: 1.0,
+            ease: "power4.out",
+            delay: index * 0.04,
             scrollTrigger: {
               trigger: card,
               start: "top 90%",
-              end: "bottom 20%",
+              end: "bottom 10%",
               toggleActions: "play none none reverse"
             }
           }
@@ -84,16 +89,16 @@ const FactsSection = () => {
     <section ref={sectionRef} className="py-20 px-6">
       <div className="max-w-7xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 8 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+          viewport={{ once: true, amount: 0.2 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-linear-to-r from-quantum-blue to-quantum-cyan bg-clip-text text-black">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
             Clear Facts About Quantum Computing
           </h2>
-          <div className="w-24 h-px bg-linear-to-r from-transparent via-quantum-blue to-transparent mx-auto" />
+          <div className="w-24 h-px bg-gradient-to-r from-transparent via-quantum-maroon to-transparent mx-auto" />
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -101,19 +106,19 @@ const FactsSection = () => {
             <motion.div
               key={fact.id}
               ref={addToRefs}
-              whileHover={{ scale: 1.02, y: -5 }}
-              transition={{ duration: 0.2 }}
-              className="glassmorphism rounded-xl p-6 quantum-glow hover:quantum-glow-strong transition-all duration-200 bg-linear-to-br"
+              whileHover={{ scale: 1.01, y: -2 }}
+              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+              className="glassmorphism rounded-xl p-6 quantum-glow hover:quantum-glow-strong transition-all duration-500 bg-gradient-to-br from-quantum-bg-secondary/50 to-quantum-bg-tertiary/30"
             >
-              <div className="w-12 h-12 rounded-lg bg-linear-to-br from-quantum-blue to-quantum-cyan flex items-center justify-center mb-4">
-                <div className="w-6 h-6 bg-white rounded-sm opacity-80" />
+              <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-quantum-maroon via-quantum-dark-red to-quantum-crimson flex items-center justify-center mb-4 shadow-lg shadow-quantum-maroon/20">
+                <div className="w-6 h-6 bg-white/90 rounded-sm" />
               </div>
 
-              <h3 className="text-xl font-semibold text-slate-800 mb-3">
+              <h3 className="text-xl font-semibold text-quantum-text-primary mb-3 group-hover:text-quantum-crimson transition-colors duration-300">
                 {fact.title}
               </h3>
 
-              <p className="text-slate-600 leading-relaxed">
+              <p className="text-quantum-text-secondary leading-relaxed group-hover:text-quantum-text-primary/90 transition-colors duration-300">
                 {fact.description}
               </p>
             </motion.div>

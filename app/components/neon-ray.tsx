@@ -189,13 +189,13 @@ vec3 getHolographicMaterial(vec3 normal, vec3 viewDir, float time) {
   float hue = dot(normal, viewDir) * 3.14159 + time * 0.5;
   
   // White/light blue iridescence
-  vec3 whiteBlueShades = vec3(
-    sin(hue + 2.0) * 0.1 + 0.8,  // Light red variation for white
-    sin(hue + 1.0) * 0.15 + 0.85,  // Light green variation for white
-    sin(hue) * 0.3 + 0.7   // Blue component with variation
+  vec3 maroonShades = vec3(
+    sin(hue + 2.0) * 0.12 + 0.353,  // Red component for darker maroon
+    sin(hue + 1.0) * 0.08 + 0.0,    // Low green for deep red
+    sin(hue) * 0.04 + 0.0           // Very low blue for maroon
   );
   
-  return whiteBlueShades * fresnel * 1.2;
+  return maroonShades * fresnel * 1.2;
 }
 
 vec3 getIridescence(vec3 normal, vec3 viewDir, float time) {
@@ -246,15 +246,15 @@ void main() {
     
     // Rim lighting for edge glow
     float rimLight = pow(1.0 - max(dot(normal, viewDir), 0.0), 3.0);
-    vec3 rimColor = vec3(0.4, 0.8, 1.0) * rimLight * 0.5;
+    vec3 rimColor = vec3(0.353, 0.0, 0.0) * rimLight * 0.5;
     
     // Ambient occlusion simulation
     float ao = 1.0 - smoothstep(0.0, 0.3, totalDist / tMax);
     
-    vec3 baseColor = vec3(0.9, 0.95, 1.0); // Bright white base
+    vec3 baseColor = vec3(0.353, 0.0, 0.0); // Darker maroon base
     color = baseColor * (0.8 + diff * 0.2);
     color += iridescent * (0.2 + diff * 0.1);
-    color += vec3(1.0, 0.9, 0.8) * spec * 0.3;
+    color += vec3(0.353, 0.0, 0.0) * spec * 0.3;
     color += rimColor * 0.3;
     
     // Atmospheric perspective - disabled for now
@@ -358,7 +358,7 @@ export const Scene: FC = () => {
 
   return (
     <div
-    className='w-full h-full bg-linear-to-b from-[#90b5ff] to-[#ffffff]'
+    className='w-full h-full bg-gradient-to-b from-[#1f0000] to-[#0f0f0f]'
 
     >
       <Canvas

@@ -54,17 +54,21 @@ const BillOfRightsSection = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.08,
-        delayChildren: 0.2
+        staggerChildren: 0.04,
+        delayChildren: 0.1
       }
     }
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, x: -20 },
+    hidden: { opacity: 0, x: -8 },
     visible: {
       opacity: 1,
-      x: 0
+      x: 0,
+      transition: {
+        duration: 0.9,
+        ease: [0.16, 1, 0.3, 1]
+      }
     }
   };
 
@@ -72,27 +76,27 @@ const BillOfRightsSection = () => {
     <section ref={sectionRef} className="py-20 px-6">
       <div className="max-w-6xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 8 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+          viewport={{ once: true, amount: 0.2 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-linear-to-r from-quantum-purple via-quantum-blue to-quantum-cyan bg-clip-text text-black">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
             Quantum Bill of Rights
           </h2>
-          <p className="text-xl text-slate-600 font-light max-w-2xl mx-auto">
+          <p className="text-xl text-quantum-text-secondary font-light max-w-2xl mx-auto">
             A public-facing set of protections every person should have in a world where quantum computing exists
           </p>
-          <div className="w-24 h-px bg-linear-to-r from-transparent via-quantum-purple to-transparent mx-auto mt-6" />
+          <div className="w-24 h-px bg-gradient-to-r from-transparent via-quantum-maroon to-transparent mx-auto mt-6" />
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
+          initial={{ opacity: 0, scale: 0.99 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.15 }}
-          viewport={{ once: true, amount: 0.3 }}
-          className="glassmorphism rounded-2xl p-8 md:p-12 quantum-glow-strong"
+          transition={{ duration: 0.9, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+          viewport={{ once: true, amount: 0.2 }}
+          className="glassmorphism rounded-2xl p-8 md:p-12 quantum-glow-strong bg-gradient-to-br from-quantum-bg-secondary/60 to-quantum-bg-tertiary/40"
         >
           <motion.div
             variants={containerVariants}
@@ -107,14 +111,14 @@ const BillOfRightsSection = () => {
                 variants={itemVariants}
                 className="flex items-start space-x-4 group"
               >
-                <div className="shrink-0 w-8 h-8 rounded-full bg-linear-to-br from-quantum-purple to-quantum-blue flex items-center justify-center text-white font-semibold text-sm group-hover:scale-110 transition-transform duration-200">
+                <div className="shrink-0 w-8 h-8 rounded-full bg-gradient-to-br from-quantum-maroon via-quantum-dark-red to-quantum-crimson flex items-center justify-center text-white font-semibold text-sm group-hover:scale-105 transition-transform duration-300 shadow-md shadow-quantum-maroon/20">
                   {index + 1}
                 </div>
                 <div className="flex-1">
-                  <h4 className="text-lg font-semibold text-slate-800 mb-2 group-hover:text-quantum-blue transition-colors duration-200">
+                  <h4 className="text-lg font-semibold text-quantum-text-primary mb-2 group-hover:text-quantum-crimson transition-colors duration-300">
                     {right.title}
                   </h4>
-                  <p className="text-slate-600 leading-relaxed group-hover:text-slate-700 transition-colors duration-200">
+                  <p className="text-quantum-text-secondary leading-relaxed group-hover:text-quantum-text-primary/90 transition-colors duration-300">
                     {right.description}
                   </p>
                 </div>
@@ -124,9 +128,9 @@ const BillOfRightsSection = () => {
 
           {/* Decorative elements */}
           <div className="mt-12 flex justify-center space-x-4">
-            <div className="w-16 h-px bg-linear-to-r from-transparent via-quantum-cyan to-transparent" />
-            <div className="w-2 h-2 bg-quantum-cyan rounded-full animate-pulse" />
-            <div className="w-16 h-px bg-linear-to-r from-transparent via-quantum-cyan to-transparent" />
+            <div className="w-16 h-px bg-gradient-to-r from-transparent via-quantum-maroon to-transparent" />
+            <div className="w-2 h-2 bg-quantum-crimson rounded-full animate-pulse" />
+            <div className="w-16 h-px bg-gradient-to-r from-transparent via-quantum-maroon to-transparent" />
           </div>
         </motion.div>
       </div>
