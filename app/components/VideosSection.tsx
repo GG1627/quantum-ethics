@@ -29,9 +29,9 @@ const VideosSection = () => {
             opacity: 1,
             y: 0,
             scale: 1,
-            duration: 1.0,
+            duration: 0.7,
             ease: "power4.out",
-            delay: index * 0.04,
+            delay: index * 0.03,
             scrollTrigger: {
               trigger: card,
               start: "top 90%",
@@ -76,11 +76,11 @@ const VideosSection = () => {
         <motion.div
           initial={{ opacity: 0, y: 8 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           viewport={{ once: true, amount: 0.2 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white font-heading">
             Misuse Scenario Videos
           </h2>
           <p className="text-xl text-quantum-text-secondary font-light max-w-2xl mx-auto">
@@ -122,7 +122,7 @@ const VideosSection = () => {
 
               {/* Content */}
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-quantum-text-primary mb-3 group-hover:text-quantum-crimson transition-colors duration-300">
+                <h3 className="text-xl font-semibold text-quantum-text-primary mb-3 group-hover:text-quantum-crimson transition-colors duration-300 font-heading">
                   {scenario.title}
                 </h3>
                 <p className="text-quantum-text-secondary leading-relaxed group-hover:text-quantum-text-primary/90 transition-colors duration-300">

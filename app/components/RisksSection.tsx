@@ -29,9 +29,9 @@ const RisksSection = () => {
             opacity: 1,
             y: 0,
             rotationY: 0,
-            duration: 1.0,
+            duration: 0.7,
             ease: "power4.out",
-            delay: index * 0.04,
+            delay: index * 0.03,
             scrollTrigger: {
               trigger: card,
               start: "top 90%",
@@ -89,11 +89,11 @@ const RisksSection = () => {
         <motion.div
           initial={{ opacity: 0, y: 8 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           viewport={{ once: true, amount: 0.3 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white font-heading">
             Simple Explanations of Risks
           </h2>
           <p className="text-xl text-quantum-text-secondary font-light max-w-2xl mx-auto">
@@ -118,7 +118,7 @@ const RisksSection = () => {
                 <span className="text-2xl">{risk.icon}</span>
               </div>
 
-              <h3 className="text-2xl font-semibold text-quantum-text-primary mb-4 group-hover:text-quantum-crimson transition-colors duration-300">
+              <h3 className="text-2xl font-semibold text-quantum-text-primary mb-4 group-hover:text-quantum-crimson transition-colors duration-300 font-heading">
                 {risk.title}
               </h3>
 

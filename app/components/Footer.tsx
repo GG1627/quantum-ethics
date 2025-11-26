@@ -9,19 +9,19 @@ const Footer = () => {
         <motion.div
           initial={{ opacity: 0, y: 8 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           viewport={{ once: true }}
           className="mb-0"
         >
           <p className="text-lg text-quantum-text-secondary font-light leading-relaxed">
-            A project by Gator Engineers — Raising awareness for ethical quantum development.
+            A project by Gator Engineers. Raising awareness for ethical quantum development.
           </p>
         </motion.div>
 
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.9, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           viewport={{ once: true }}
           className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8"
         >
@@ -40,7 +40,7 @@ const Footer = () => {
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.9, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           viewport={{ once: true }}
           className="mt-0 pt-6 border-t border-quantum-border/50"
         >

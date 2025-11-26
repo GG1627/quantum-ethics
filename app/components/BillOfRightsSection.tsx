@@ -13,7 +13,7 @@ const BillOfRightsSection = () => {
     },
     {
       title: "The Right to Privacy",
-      description: "Individuals have the right to keep their personal, medical, financial, and communication data private — and protected from quantum-enabled decryption."
+      description: "Individuals have the right to keep their personal, medical, financial, and communication data private and protected from quantum-enabled decryption."
     },
     {
       title: "The Right to Transparency",
@@ -21,7 +21,7 @@ const BillOfRightsSection = () => {
     },
     {
       title: "The Right to Ethical Technology Governance",
-      description: "Quantum computing must be developed, managed, and regulated by accountable institutions — not concentrated in the hands of a single individual or corporation."
+      description: "Quantum computing must be developed, managed, and regulated by accountable institutions, not concentrated in the hands of a single individual or corporation."
     },
     {
       title: "The Right to Public Oversight",
@@ -41,11 +41,11 @@ const BillOfRightsSection = () => {
     },
     {
       title: "The Right to Post-Quantum Security",
-      description: "Everyone deserves cryptographic protections that are resistant to both classical and quantum attacks — including upgrades from outdated, vulnerable systems."
+      description: "Everyone deserves cryptographic protections that are resistant to both classical and quantum attacks, including upgrades from outdated, vulnerable systems."
     },
     {
       title: "The Right to a Future Where Quantum Benefits Everyone",
-      description: "Quantum computing should be developed in a way that benefits society as a whole — advancing science, medicine, and sustainability without sacrificing human rights, safety, or democratic values."
+      description: "Quantum computing should be developed in a way that benefits society as a whole, advancing science, medicine, and sustainability without sacrificing human rights, safety, or democratic values."
     }
   ];
 
@@ -54,8 +54,8 @@ const BillOfRightsSection = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.04,
-        delayChildren: 0.1
+        staggerChildren: 0.03,
+        delayChildren: 0.08
       }
     }
   };
@@ -66,7 +66,7 @@ const BillOfRightsSection = () => {
       opacity: 1,
       x: 0,
       transition: {
-        duration: 0.9,
+        duration: 0.7,
         ease: [0.16, 1, 0.3, 1]
       }
     }
@@ -78,11 +78,11 @@ const BillOfRightsSection = () => {
         <motion.div
           initial={{ opacity: 0, y: 8 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           viewport={{ once: true, amount: 0.2 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white font-heading">
             Quantum Bill of Rights
           </h2>
           <p className="text-xl text-quantum-text-secondary font-light max-w-2xl mx-auto">
@@ -94,7 +94,7 @@ const BillOfRightsSection = () => {
         <motion.div
           initial={{ opacity: 0, scale: 0.99 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.9, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.7, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
           viewport={{ once: true, amount: 0.2 }}
           className="glassmorphism rounded-2xl p-8 md:p-12 quantum-glow-strong bg-gradient-to-br from-quantum-bg-secondary/60 to-quantum-bg-tertiary/40"
         >
@@ -115,7 +115,7 @@ const BillOfRightsSection = () => {
                   {index + 1}
                 </div>
                 <div className="flex-1">
-                  <h4 className="text-lg font-semibold text-quantum-text-primary mb-2 group-hover:text-quantum-crimson transition-colors duration-300">
+                  <h4 className="text-lg font-semibold text-quantum-text-primary mb-2 group-hover:text-quantum-crimson transition-colors duration-300 font-heading">
                     {right.title}
                   </h4>
                   <p className="text-quantum-text-secondary leading-relaxed group-hover:text-quantum-text-primary/90 transition-colors duration-300">

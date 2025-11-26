@@ -29,9 +29,9 @@ const FactsSection = () => {
             opacity: 1,
             y: 0,
             scale: 1,
-            duration: 1.0,
+            duration: 0.7,
             ease: "power4.out",
-            delay: index * 0.04,
+            delay: index * 0.03,
             scrollTrigger: {
               trigger: card,
               start: "top 90%",
@@ -91,11 +91,11 @@ const FactsSection = () => {
         <motion.div
           initial={{ opacity: 0, y: 8 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           viewport={{ once: true, amount: 0.2 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white font-heading">
             Clear Facts About Quantum Computing
           </h2>
           <div className="w-24 h-px bg-gradient-to-r from-transparent via-quantum-maroon to-transparent mx-auto" />
@@ -114,7 +114,7 @@ const FactsSection = () => {
                 <div className="w-6 h-6 bg-white/90 rounded-sm" />
               </div>
 
-              <h3 className="text-xl font-semibold text-quantum-text-primary mb-3 group-hover:text-quantum-crimson transition-colors duration-300">
+              <h3 className="text-xl font-semibold text-quantum-text-primary mb-3 group-hover:text-quantum-crimson transition-colors duration-300 font-heading">
                 {fact.title}
               </h3>
 
