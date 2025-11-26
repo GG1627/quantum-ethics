@@ -55,33 +55,38 @@ const RisksSection = () => {
   const risks = [
     {
       id: 1,
-      title: "Privacy Risks",
-      description: "Quantum computers threaten to break current encryption standards, potentially exposing personal data, financial information, and confidential communications.",
-      icon: "🔐",
+      title: "Encryption & Data Exposure",
+      description:
+        "A fully functional quantum computer could instantly break today’s encryption, exposing private messages, medical records, identities, financial accounts, and confidential communications.",
+      icon: "🔓",
       gradient: "from-quantum-red to-quantum-orange"
     },
     {
       id: 2,
-      title: "National Security Risks",
-      description: "Advanced quantum capabilities could compromise military communications, intelligence operations, and critical infrastructure protection worldwide.",
-      icon: "🛡️",
+      title: "Critical Infrastructure Threats",
+      description:
+        "Quantum-powered attacks could disrupt power grids, water systems, air traffic control, and emergency services, causing real-world chaos with a single misuse command.",
+      icon: "⚠️",
       gradient: "from-quantum-accent to-quantum-red"
     },
     {
       id: 3,
-      title: "Financial System Risks",
-      description: "Quantum algorithms could manipulate markets, break blockchain security, and disrupt global financial systems at unprecedented speeds and scales.",
-      icon: "💰",
+      title: "Dangerous Molecular Simulation",
+      description:
+        "Quantum computers can rapidly simulate complex chemicals, enabling the creation of hazardous molecules or engineered biological threats by a malicious individual.",
+      icon: "🧪",
       gradient: "from-quantum-orange to-quantum-accent"
     },
     {
       id: 4,
-      title: "AI Acceleration Risks",
-      description: "Quantum computing could dramatically accelerate AI development, potentially creating systems beyond human comprehension or control.",
+      title: "AI Supercharging Risks",
+      description:
+        "Quantum computing could accelerate AI development far beyond current limits, potentially creating systems that evolve too quickly to monitor or control.",
       icon: "🤖",
       gradient: "from-quantum-red via-quantum-accent to-quantum-orange"
     }
   ];
+  
 
   return (
     <section ref={sectionRef} className="py-20 px-6">
