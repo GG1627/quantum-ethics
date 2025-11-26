@@ -1,12 +1,25 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { Scene } from './neon-ray';
 
 
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Logo at top */}
+      <div className="absolute top-6 left-6 z-50">
+        <Image
+          src="/Logo.png"
+          alt="Logo"
+          width={60}
+          height={60}
+          className="object-contain"
+          priority
+        />
+      </div>
+
       {/* Quantum Grid Background */}
       <div className="absolute inset-0">
         <Scene />
