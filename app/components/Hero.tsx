@@ -11,7 +11,7 @@ const Hero = () => {
       {/* Logo at top */}
       <div className="absolute top-6 left-6 z-50">
         <Image
-          src="/Logo.png"
+          src="/Logo2.png"
           alt="Logo"
           width={60}
           height={60}
