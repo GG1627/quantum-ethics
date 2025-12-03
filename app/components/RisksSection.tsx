@@ -98,13 +98,13 @@ const RisksSection = () => {
           viewport={{ once: true, amount: 0.3 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white font-heading">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 font-heading bg-gradient-to-r from-white via-quantum-text-primary to-white bg-clip-text text-transparent">
             Simple Explanations of Risks
           </h2>
           <p className="text-xl text-quantum-text-secondary font-light max-w-2xl mx-auto">
             Understanding the key ethical challenges posed by quantum computing
           </p>
-          <div className="w-24 h-px bg-gradient-to-r from-transparent via-quantum-maroon to-transparent mx-auto mt-6" />
+          <div className="w-32 h-px bg-gradient-to-r from-transparent via-quantum-crimson via-quantum-maroon to-transparent mx-auto mt-6" />
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -117,22 +117,28 @@ const RisksSection = () => {
                 y: -2
               }}
               transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-              className="group glassmorphism rounded-xl p-8 quantum-glow hover:quantum-glow-strong transition-all duration-500 bg-gradient-to-br from-quantum-bg-secondary/50 to-quantum-bg-tertiary/30"
+              className="group glassmorphism rounded-xl p-8 quantum-glow hover:quantum-glow-strong transition-all duration-500 bg-gradient-to-br from-quantum-bg-secondary/60 via-quantum-bg-tertiary/40 to-quantum-bg-secondary/60 border border-quantum-maroon/20 hover:border-quantum-crimson/40 relative overflow-hidden"
             >
-              <div className={`w-16 h-16 rounded-xl bg-gradient-to-br from-quantum-maroon via-quantum-dark-red to-quantum-crimson flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-300 shadow-lg shadow-quantum-maroon/20`}>
-                <span className="text-2xl">{risk.icon}</span>
+              {/* Animated gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-br from-quantum-crimson/10 via-transparent to-quantum-maroon/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              
+              <div className="relative z-10">
+                <div className={`w-16 h-16 rounded-xl bg-gradient-to-br from-quantum-crimson via-quantum-maroon to-quantum-dark-red flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg shadow-quantum-crimson/30 ring-2 ring-quantum-crimson/20`}>
+                  <span className="text-2xl">{risk.icon}</span>
+                </div>
+
+                <h3 className="text-2xl font-semibold text-quantum-text-primary mb-4 group-hover:text-quantum-crimson transition-colors duration-300 font-heading flex items-center gap-2">
+                  <span className="w-1 h-5 bg-gradient-to-b from-quantum-crimson to-quantum-maroon rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  {risk.title}
+                </h3>
+
+                <p className="text-quantum-text-secondary leading-relaxed group-hover:text-quantum-text-primary/90 transition-colors duration-300">
+                  {risk.description}
+                </p>
+
+                {/* Enhanced accent line */}
+                <div className={`w-full h-0.5 bg-gradient-to-r from-transparent via-quantum-maroon via-quantum-crimson via-quantum-dark-red to-transparent mt-6 opacity-40 group-hover:opacity-100 transition-opacity duration-300 rounded-full`} />
               </div>
-
-              <h3 className="text-2xl font-semibold text-quantum-text-primary mb-4 group-hover:text-quantum-crimson transition-colors duration-300 font-heading">
-                {risk.title}
-              </h3>
-
-              <p className="text-quantum-text-secondary leading-relaxed group-hover:text-quantum-text-primary/90 transition-colors duration-300">
-                {risk.description}
-              </p>
-
-              {/* Subtle accent line */}
-              <div className={`w-12 h-0.5 bg-gradient-to-r from-quantum-maroon via-quantum-crimson to-quantum-dark-red mt-6 opacity-60 group-hover:opacity-100 transition-opacity duration-300`} />
             </motion.div>
           ))}
         </div>

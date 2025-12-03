@@ -358,7 +358,7 @@ export const Scene: FC = () => {
 
   return (
     <div
-    className='w-full h-full bg-gradient-to-b from-[#1f0000] to-[#0f0f0f]'
+    className='w-full h-full bg-transparent'
 
     >
       <Canvas

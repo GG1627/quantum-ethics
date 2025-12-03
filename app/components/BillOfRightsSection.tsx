@@ -82,13 +82,13 @@ const BillOfRightsSection = () => {
           viewport={{ once: true, amount: 0.2 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white font-heading">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 font-heading bg-gradient-to-r from-white via-quantum-text-primary to-white bg-clip-text text-transparent">
             Quantum Bill of Rights
           </h2>
           <p className="text-xl text-quantum-text-secondary font-light max-w-2xl mx-auto">
             A public-facing set of protections every person should have in a world where quantum computing exists
           </p>
-          <div className="w-24 h-px bg-gradient-to-r from-transparent via-quantum-maroon to-transparent mx-auto mt-6" />
+          <div className="w-32 h-px bg-gradient-to-r from-transparent via-quantum-crimson via-quantum-maroon to-transparent mx-auto mt-6" />
         </motion.div>
 
         <motion.div
@@ -96,26 +96,29 @@ const BillOfRightsSection = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
           viewport={{ once: true, amount: 0.2 }}
-          className="glassmorphism rounded-2xl p-8 md:p-12 quantum-glow-strong bg-gradient-to-br from-quantum-bg-secondary/60 to-quantum-bg-tertiary/40"
+          className="glassmorphism rounded-2xl p-8 md:p-12 quantum-glow-strong bg-gradient-to-br from-quantum-bg-secondary/70 via-quantum-bg-tertiary/50 to-quantum-bg-secondary/70 border border-quantum-crimson/20 relative overflow-hidden"
         >
+          {/* Animated background gradient */}
+          <div className="absolute inset-0 bg-gradient-to-br from-quantum-crimson/10 via-transparent to-quantum-maroon/10 opacity-50 animate-pulse" />
           <motion.div
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
-            className="grid grid-cols-1 md:grid-cols-2 gap-6"
+            className="grid grid-cols-1 md:grid-cols-2 gap-6 relative z-10"
           >
             {rights.map((right, index) => (
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className="flex items-start space-x-4 group"
+                className="flex items-start space-x-4 group p-4 rounded-lg hover:bg-quantum-bg-tertiary/30 transition-all duration-300"
               >
-                <div className="shrink-0 w-8 h-8 rounded-full bg-gradient-to-br from-quantum-maroon via-quantum-dark-red to-quantum-crimson flex items-center justify-center text-white font-semibold text-sm group-hover:scale-105 transition-transform duration-300 shadow-md shadow-quantum-maroon/20">
+                <div className="shrink-0 w-10 h-10 rounded-full bg-gradient-to-br from-quantum-crimson via-quantum-maroon to-quantum-dark-red flex items-center justify-center text-white font-bold text-sm group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg shadow-quantum-crimson/30 ring-2 ring-quantum-crimson/20">
                   {index + 1}
                 </div>
                 <div className="flex-1">
-                  <h4 className="text-lg font-semibold text-quantum-text-primary mb-2 group-hover:text-quantum-crimson transition-colors duration-300 font-heading">
+                  <h4 className="text-lg font-semibold text-quantum-text-primary mb-2 group-hover:text-quantum-crimson transition-colors duration-300 font-heading flex items-center gap-2">
+                    <span className="w-1 h-4 bg-gradient-to-b from-quantum-crimson to-quantum-maroon rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     {right.title}
                   </h4>
                   <p className="text-quantum-text-secondary leading-relaxed group-hover:text-quantum-text-primary/90 transition-colors duration-300">
@@ -127,10 +130,14 @@ const BillOfRightsSection = () => {
           </motion.div>
 
           {/* Decorative elements */}
-          <div className="mt-12 flex justify-center space-x-4">
-            <div className="w-16 h-px bg-gradient-to-r from-transparent via-quantum-maroon to-transparent" />
-            <div className="w-2 h-2 bg-quantum-crimson rounded-full animate-pulse" />
-            <div className="w-16 h-px bg-gradient-to-r from-transparent via-quantum-maroon to-transparent" />
+          <div className="mt-12 flex justify-center items-center space-x-4 relative z-10">
+            <div className="w-20 h-px bg-gradient-to-r from-transparent via-quantum-maroon/50 to-quantum-maroon/50" />
+            <div className="flex space-x-2">
+              <div className="w-2 h-2 bg-quantum-crimson rounded-full animate-pulse" />
+              <div className="w-2 h-2 bg-quantum-maroon rounded-full animate-pulse delay-300" />
+              <div className="w-2 h-2 bg-quantum-dark-red rounded-full animate-pulse delay-700" />
+            </div>
+            <div className="w-20 h-px bg-gradient-to-l from-transparent via-quantum-maroon/50 to-quantum-maroon/50" />
           </div>
         </motion.div>
       </div>
