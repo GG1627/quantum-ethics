@@ -5,8 +5,11 @@ import { useEffect, useState } from 'react';
 const GradientMesh = () => {
   const [scrollY, setScrollY] = useState(0);
   const [windowHeight, setWindowHeight] = useState(0);
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
+    setIsMounted(true);
+    
     const handleScroll = () => {
       setScrollY(window.scrollY);
     };
@@ -27,8 +30,22 @@ const GradientMesh = () => {
 
   // Calculate dynamic gradient positions based on scroll
   const getGradientStyle = () => {
+    // Default values for SSR
+    if (!isMounted || typeof window === 'undefined' || typeof document === 'undefined') {
+      return {
+        background: `
+          radial-gradient(circle at 20% 10%, rgba(128, 0, 0, 0.12) 0%, transparent 50%),
+          radial-gradient(circle at 80% 70%, rgba(220, 20, 60, 0.1) 0%, transparent 50%),
+          radial-gradient(circle at 50% 50%, rgba(139, 0, 0, 0.08) 0%, transparent 60%),
+          radial-gradient(ellipse at 30% 20%, rgba(220, 20, 60, 0.06) 0%, transparent 70%),
+          linear-gradient(180deg, rgba(15, 15, 15, 0.98) 0%, rgba(24, 24, 24, 0.95) 50%, rgba(15, 15, 15, 0.98) 100%)
+        `,
+      };
+    }
+
+    const scrollHeight = document.documentElement.scrollHeight;
     const scrollPercent = Math.min(
-      scrollY / Math.max(document.documentElement.scrollHeight - windowHeight, 1),
+      scrollY / Math.max(scrollHeight - windowHeight, 1),
       1
     );
 
@@ -56,39 +73,45 @@ const GradientMesh = () => {
     };
   };
 
+  const gradientStyle = getGradientStyle();
+
   return (
     <div 
       className="fixed inset-0 -z-10 pointer-events-none"
       style={{
-        ...getGradientStyle(),
+        ...gradientStyle,
         backgroundSize: '200% 200%',
-        backgroundPosition: `${scrollY * 0.05}% ${scrollY * 0.05}%`,
+        backgroundPosition: isMounted ? `${scrollY * 0.05}% ${scrollY * 0.05}%` : '0% 0%',
         transition: 'background 0.1s ease-out',
       }}
     >
       {/* Secondary mesh layer for depth */}
-      <div 
-        className="absolute inset-0 opacity-40"
-        style={{
-          backgroundImage: `
-            radial-gradient(circle at ${25 + scrollY * 0.02}% ${35 + scrollY * 0.01}%, rgba(220, 20, 60, 0.08) 0%, transparent 45%),
-            radial-gradient(circle at ${75 - scrollY * 0.015}% ${65 - scrollY * 0.02}%, rgba(128, 0, 0, 0.08) 0%, transparent 45%),
-            radial-gradient(circle at ${50 + Math.sin(scrollY * 0.001) * 15}% ${50 + Math.cos(scrollY * 0.001) * 15}%, rgba(139, 0, 0, 0.06) 0%, transparent 55%)
-          `,
-          backgroundSize: '180% 180%',
-          backgroundPosition: `${scrollY * 0.03}% ${scrollY * 0.03}%`,
-        }}
-      />
+      {isMounted && (
+        <div 
+          className="absolute inset-0 opacity-40"
+          style={{
+            backgroundImage: `
+              radial-gradient(circle at ${25 + scrollY * 0.02}% ${35 + scrollY * 0.01}%, rgba(220, 20, 60, 0.08) 0%, transparent 45%),
+              radial-gradient(circle at ${75 - scrollY * 0.015}% ${65 - scrollY * 0.02}%, rgba(128, 0, 0, 0.08) 0%, transparent 45%),
+              radial-gradient(circle at ${50 + Math.sin(scrollY * 0.001) * 15}% ${50 + Math.cos(scrollY * 0.001) * 15}%, rgba(139, 0, 0, 0.06) 0%, transparent 55%)
+            `,
+            backgroundSize: '180% 180%',
+            backgroundPosition: `${scrollY * 0.03}% ${scrollY * 0.03}%`,
+          }}
+        />
+      )}
       
       {/* Tertiary subtle layer */}
-      <div 
-        className="absolute inset-0 opacity-20"
-        style={{
-          backgroundImage: `
-            radial-gradient(ellipse at ${40 + scrollY * 0.01}% ${60 - scrollY * 0.01}%, rgba(220, 20, 60, 0.05) 0%, transparent 60%)
-          `,
-        }}
-      />
+      {isMounted && (
+        <div 
+          className="absolute inset-0 opacity-20"
+          style={{
+            backgroundImage: `
+              radial-gradient(ellipse at ${40 + scrollY * 0.01}% ${60 - scrollY * 0.01}%, rgba(220, 20, 60, 0.05) 0%, transparent 60%)
+            `,
+          }}
+        />
+      )}
     </div>
   );
 };
