@@ -1,36 +1,31 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Quantum Ethics
 
-## Getting Started
+A web platform exploring the profound ethical implications of quantum computing and raising global awareness about the transformative power of this emerging technology.
 
-First, run the development server:
+## About
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+This project examines a critical question: **What if a private individual owned the world's first fully functional quantum computer?** Through interactive content, visual demonstrations, and expert insights, we explore the potential risks, ethical challenges, and necessary safeguards surrounding quantum computing.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The site features:
+- Clear explanations of quantum computing fundamentals
+- Visual demonstrations of potential misuse scenarios
+- A Quantum Bill of Rights outlining essential protections
+- Expert insights on quantum security and ethics
+- Comprehensive references and citations
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Information
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+**Course:** EGS4034 - Engineering Ethics  
+**Institution:** University of Florida  
+**Team:** EGS4034 Group 32
 
-## Learn More
+**Team Members:**
+- Gael Garcia
+- Aidan Ferguson
+- Peter Van Kirk
 
-To learn more about Next.js, take a look at the following resources:
+This project was created as part of the Engineering Ethics course at the University of Florida to explore the ethical dimensions of advanced quantum computing technology and its potential impact on society.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Technology
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Built with [Next.js](https://nextjs.org), React, TypeScript, and modern web technologies including GSAP animations and Framer Motion for an engaging user experience.
