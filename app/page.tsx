@@ -10,14 +10,18 @@ import GradientMesh from './components/GradientMesh';
 
 export default function Home() {
   return (
-    <main className="min-h-screen relative">
-      <GradientMesh />
-      <Hero />
-      <FactsSection />
-      <BillOfRightsSection />
-      <VideosSection />
-      <RisksSection />
-      <Footer />
+    <main className="relative min-h-screen">
+      <div className="relative z-0">
+        <div className="absolute inset-0 -z-10">
+          <GradientMesh />
+        </div>
+        <Hero />
+        <FactsSection />
+        <BillOfRightsSection />
+        <VideosSection />
+        <RisksSection />
+        <Footer />
+      </div>
     </main>
   );
 }
